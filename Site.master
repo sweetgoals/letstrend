@@ -1,0 +1,118 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head runat="server"> 
+        <title></title> 
+        <meta name="google-site-verification" content="uJHSCMiIpCQIQp5glKqHuoCG-Htsr_ZjbgFtW84fGmI" />
+        <meta name="alexaVerifyID" content="9rFPkPNrqYLjGah_of_fZf9W9hk" />   
+        <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />  
+        <link href="~/Styles/layers.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/glass5.png" />
+
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+        <script type="text/javascript" src="Scripts/controls.js"></script>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-11755754-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+            function calculateGain() {
+                var buyInput = document.getElementById('BuyValue');
+                var sellInput = document.getElementById('SellValue');
+                var cashOut = document.getElementById('cashGain');
+                var percentOut = document.getElementById('percentGain');
+                var cashGainResult=0;
+                var percentGainResult=0;
+                cashGainResult = sellInput.value - buyInput.value;
+                cashGainResult = cashGainResult.toFixed(2);
+                cashOut.innerText = cashGainResult + "$";
+                cashOut.textContent = cashGainResult + "$";
+                percentGainResult = ((sellInput.value - buyInput.value) / buyInput.value) * 100;
+                percentGainResult = percentGainResult.toFixed(2);
+                percentOut.innerText = percentGainResult + "%"; //(((sellInput.value - buyInput.value) / buyInput.value) * 100) + "%";
+                percentOut.textContent = percentGainResult + "%";
+            }   
+        </script>
+
+    </head>
+
+    <body>
+        <form runat="server">
+            <div class="layer" id="layer1">
+                <asp:Image ID="Image1" runat="server" 
+                    style="position:relative; left:100px;" 
+                    ImageUrl="~/images/letstrend logo.png" />
+                <div style="float:right;">                     
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" style="font-size: medium">Log In</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutText="Log Out"/> ]
+                            [ <a href="~/Account/ChangePassword.aspx" ID="A1" runat="server" style="font-size: medium">Change Password</a> ]
+                        </LoggedInTemplate>
+                     </asp:LoginView>
+                </div>
+            </div>
+            <div id="layer2_wrap">
+                    <asp:Menu ID="Menu2" runat="server" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal"       
+                        style="position: relative; left:100px; top:5px; height:23px; font-size: medium;" CssClass="menu">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Market"/>
+                            <asp:MenuItem NavigateUrl="~/stock.aspx" Text="Stock"/>
+                            <asp:MenuItem NavigateUrl="~/money.aspx" Text="Money Maker"/>
+                            <asp:MenuItem NavigateUrl="~/Portfolio.aspx" Text="Portfolio"/>                          
+                            <asp:MenuItem NavigateUrl="~/trending.aspx" Text="Trending"/>
+                            <asp:MenuItem NavigateUrl="~/theblog/Default.aspx" Text="Blog"/>                      
+                        </Items>
+                    </asp:Menu>
+                    <div style="position: relative; left:810px; top:-20px; width: 20%;">
+                        <span style="font-size: large; font-weight: bold">B </span>
+                        <input id="BuyValue" type="text" 
+                            style="position: relative; top:-3px; font-size: medium; width: 60px;"/>
+                        <span style="font-size: large; font-weight: bold">S </span>
+                        <input id="SellValue" type="text"               
+                            style="position: relative; top:-3px; font-size: medium; width: 60px;"/>
+                        <asp:button id="gainButton" runat="server" Text="G"
+                            style="position: relative; top:-3px; font-size: medium; width: 30px;" />
+                        <asp:Label ID="cashGain" runat="server" Text=""
+                            style="position: relative; top:-3px; left:10px; font-size: medium; width: 30px;"></asp:Label>
+                        <asp:Label ID="percentGain" runat="server" Text=""
+                            style="position: relative; top:-3px; left:30px; font-size: medium; width: 30px;"></asp:Label>
+                    </div>      
+             </div>    
+             <div style="float:left; width:100%;">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+             </div>
+             <div style="float:left; width:100%; text-align: center">
+                  <h2>Create an 
+                      <asp:HyperLink ID="HyperLink1" runat="server" 
+                          NavigateUrl="~/Account/Register.aspx">Account </asp:HyperLink>for 
+                      <asp:hyperlink ID="hyper2" runat="server" 
+                          NavigateUrl="~/Info/User Privileges.aspx">User Privileges</asp:hyperlink> 
+                  </h2>
+                  <h2> 
+                  <asp:hyperlink ID="Hyperlink2" runat="server" 
+                          NavigateUrl="http://youtu.be/CdmXzHOamMs" Target="_blank">Demo Video</asp:hyperlink> 
+                  <br />
+                  Questions? Comments? Bugs? Got an Idea? 
+                  <asp:HyperLink ID="commentsLink" runat="server" style="font-size:medium;"
+                        NavigateUrl="http://www.letstrend.com/theblog/contact.aspx" 
+                        Target="_blank">Tell me about it!</asp:HyperLink>
+                  </h2>
+                  <h2> 
+                      Best Used With Internet Explorer<br />
+                  </h2>
+             </div>
+        </form>
+    </body>
+</html>
