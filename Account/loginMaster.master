@@ -1,0 +1,52 @@
+﻿<%@ Master Language="VB" CodeFile="loginMaster.master.vb" Inherits="Account_loginMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head id="Head1" runat="server"> 
+        <title></title> 
+        <meta name="google-site-verification" content="uJHSCMiIpCQIQp5glKqHuoCG-Htsr_ZjbgFtW84fGmI" />
+        <meta name="alexaVerifyID" content="9rFPkPNrqYLjGah_of_fZf9W9hk" />   
+        <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />  
+        <link href="~/Styles/layers.css" rel="stylesheet" type="text/css" />
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-11755754-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <form id="Form1" runat="server">
+            <div class="layer" id="layer1">
+                <asp:Image ID="Image1" runat="server" 
+                    style="position:relative; left:100px;" 
+                    ImageUrl="~/images/letstrend logo.png" />
+            </div>
+            <div id="layer2_wrap">
+                    <asp:Menu ID="Menu2" 
+                        runat="server" 
+                        EnableViewState="false" 
+                        IncludeStyleBlock="false" 
+                        Orientation="Horizontal"       
+                        style="position: relative; left:100px; top:5px; height:23px; font-size: medium;" CssClass="menu">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Market"/>
+                            <asp:MenuItem NavigateUrl="~/stock.aspx" Text="Stock"/>
+                            <asp:MenuItem NavigateUrl="~/money.aspx" Text="Money Maker"/>
+                            <asp:MenuItem NavigateUrl="~/Portfolio.aspx" Text="Portfolio"/>                           
+                            <asp:MenuItem NavigateUrl="~/trending.aspx" Text="Trending"/>
+                            <asp:MenuItem NavigateUrl="~/theblog/Default.aspx" Text="Blog"/>                      
+                        </Items>
+                    </asp:Menu>
+             </div>    
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </form>
+    </body>
+</html>

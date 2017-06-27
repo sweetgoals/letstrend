@@ -1,0 +1,383 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+.greenButtonClass
+{
+	border: 2px solid black;
+	color: #000000;
+}
+
+.greenButtonClass.active
+{
+	background-color: rgb(0,128,0);
+	color: rgb(255,255,255);
+}
+
+.limeButtonClass 
+{
+   border: 2px solid black;
+   background-color: rgb(230,230,230);  
+}
+
+.limeButtonClass.active  
+{
+	background-color: rgb(0,255,0); 
+}
+
+body   
+{
+    font-size: .70em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;   
+        
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+   color: #034af3;
+}
+
+p
+{
+    /*margin-bottom: 10px;*/
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: black;
+    /*font-variant: small-caps;*/
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+	font-size: 2.0em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+h2
+{
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+h3
+{
+    font-size: 1.2em;
+	height: 26px;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    background-color: #ffffff;
+
+}
+
+.header
+{
+    /*position: inherit;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+	top: 0px;
+	left: 0px;*/
+	height: 35px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    /*padding: 0px 0px 0px 20px;*/
+    border: none;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+}
+
+.leftCol
+{
+    width: 200px;
+}
+
+.footer
+{
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#CCFF99;
+}
+
+div.menu
+{
+   /* padding: 4px 0px 4px 8px;*/
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #CCFF99;
+    color: black;   
+    font-weight:bold;
+    padding: 4px 20px;
+    text-decoration: none; 
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    color: green;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    /*margin: 1em 0px;*/
+    /*padding: 1em;
+    border: 1px solid #ccc;*/
+}
+
+fieldset p 
+{	width: 333px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    /*padding: 2px 4px 8px 4px;*/
+}
+
+input.textEntry 
+{
+    width: 320px;
+    /*border: 1px solid #ccc;*/
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    /*border: 1px solid #ccc;*/
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;   
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: black;
+}
+
+.loginDisplay a:link
+{
+    color: black;
+}
+
+.loginDisplay a:visited
+{
+    color: blue;
+}
+
+.loginDisplay a:hover
+{
+    color: green;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.collapsePanel {
+	background-color:white;
+	overflow:hidden;
+}
+
+.collapsePanelHeader{	
+	color: Yellow;
+	background-color: Black;
+	font-weight:bold;
+	float:left;
+	padding:5px; 
+	cursor: pointer; 
+	vertical-align: middle;
+}
+
+.accordionHeader
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #2E4d7B;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.accordionContent
+{
+    background-color: #D3DEEF;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.watermark {
+	background: #FFAAFF;
+}
+
+.popupControl {
+	background-color:#AAD4FF;
+	position:absolute;
+	visibility:hidden;
+	border-style:solid;
+	border-color: Black;
+	border-width: 2px;
+}
+
+
+.modalPopup {
+	background-color:#ffffdd;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+.sampleStyleA {
+	background-color:#FFF;
+}
+
+.sampleStyleB {
+	background-color:#FFF;
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:bold;
+}
+
+.sampleStyleC {
+	background-color:#ddffdd;
+	font-family:sans-serif;
+	font-size:10pt;
+	font-style:italic;
+}
+
+.sampleStyleD {
+	background-color:Blue;
+	color:White;
+	font-family:Arial;
+	font-size:10pt;
+}
